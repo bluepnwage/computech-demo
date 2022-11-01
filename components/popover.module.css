@@ -1,0 +1,9 @@
+.dropdown::after {
+  content: "";
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  height: 0.5em;
+  margin-left: 0.75em;
+  width: 0.5em;
+  transform: rotate(45deg);
+}
