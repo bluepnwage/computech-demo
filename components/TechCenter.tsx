@@ -24,7 +24,7 @@ export function TechCenter() {
           <div className="p-4 flex-col flex h-2/5 justify-between">
             <h3 className="font-bold text-xl mb-2">Computech Technology Centers</h3>
             <p>
-              Unique in the Caribbean area, you'll experiment at the CTC an immersive experience focused on your
+              Unique in the Caribbean area, you&aps;ll experiment at the CTC an immersive experience focused on your
               business outcomes. Our team will help you find the right solutions to transform your business by bringing
               together the right collection of resources.
             </p>

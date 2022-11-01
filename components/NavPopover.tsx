@@ -29,7 +29,7 @@ export function TestPopover() {
             <Popover.Button
               className={`
                 ${open ? "" : "text-opacity-90"}
-                group inline-flex items-center rounded-md  px-3 py-2 text-base   hover:text-opacity-100  focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group inline-flex items-center rounded-sm outline-none appearance-none  px-3 py-2 text-base  hover:text-indigo-600  hover:text-opacity-100  focus-visible:ring-2 focus-visible:ring-indigo-600  focus-visible:ring-opacity-75`}
             >
               <span>Solutions</span>
               {/* <ChevronDownIcon
@@ -49,9 +49,19 @@ export function TestPopover() {
             >
               <Popover.Panel className="absolute w-64 left-1/2 z-10 mt-3 -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
                 <div className="overflow-hidden rounded-lg shadow-lg w-64 ring-1 ring-black ring-opacity-5">
-                  <div className="relative grid gap-8 w-full bg-white p-7 lg:grid-cols-2">
-                    <a>Digital Covid Certificate</a>
-                    <a>Covid-19 VMS</a>
+                  <div className="relative flex flex-col gap-8 w-full bg-white p-7 ">
+                    <a
+                      href={"#"}
+                      className="p-4 outline-none rounded-sm appearance-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+                    >
+                      Digital Covid Certificate
+                    </a>
+                    <a
+                      href={"#"}
+                      className="p-4 outline-none rounded-sm appearance-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+                    >
+                      Covid-19 VMS
+                    </a>
                   </div>
                 </div>
               </Popover.Panel>
