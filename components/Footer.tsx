@@ -1,7 +1,16 @@
+import apc from "../public/apc.png";
+import hpe from "../public/hpe.png";
+import dell from "../public/dell.png";
+import microsoft from "../public/microsoft.png";
+import fortinet from "../public/fortinet.png";
+import veeam from "../public/veeam.png";
+import mitel from "../public/mitel.png";
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="bg-gray-900 flex flex-col items-center gap-5 py-10 ">
-      <div className="w-4/5 flex justify-between gap-5">
+      <div className="w-4/5 flex flex-col md:flex-row md:justify-between gap-5">
         <div className="basis-1/3 grow">
           <h2 className="text-gray-100 font-bold text-xl mb-2">Awards And Recognition</h2>
           <ul className="text-gray-300 space-y-2">
@@ -36,6 +45,21 @@ export function Footer() {
   );
 }
 
+const images = [apc, hpe, dell, microsoft, fortinet, veeam, mitel];
+
 function Banner() {
-  return <div className="bg-white h-16 w-full"></div>;
+  return (
+    <div className="bg-white py-10 w-full flex-col md:flex-row items-center flex justify-evenly">
+      {images.map((image, key) => (
+        <Image
+          key={key}
+          className="hover:scale-125 duration-200 ease-out"
+          height={image.height / 2}
+          width={image.width / 2}
+          src={image}
+          alt={""}
+        />
+      ))}
+    </div>
+  );
 }

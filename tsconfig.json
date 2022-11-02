@@ -20,6 +20,13 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/demo/page.jsx",
+    "app/demo/streaming/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }

@@ -12,7 +12,7 @@ export function Stories() {
         <h2 className="font-bold text-3xl mb-5">Testimonials</h2>
         <p>This is how our work brings value to our clients and their customers</p>
       </header>
-      <div className="grid-cols-12 grid gap-5 w-11/12 items-stretch mb-10">
+      <div className="grid-cols-6 md:grid-cols-12 grid gap-5 w-11/12 items-stretch mb-10">
         <Card
           image={sxmGov}
           title={"SXM GOV"}
@@ -52,7 +52,7 @@ function Card({ description, title, image }: PropTypes) {
   return (
     <div
       style={{ display: "grid", gridTemplateRows: "minmax(150px, min-content)" }}
-      className="bg-white shadow-md rounded-md ring-1 ring-black ring-opacity-5 hover:scale-105 duration-200 ease-out  col-span-3 "
+      className="bg-white shadow-md rounded-md ring-1 ring-black ring-opacity-5 hover:scale-105 duration-200 ease-out col-span-full md:col-span-3 "
     >
       <figure className="bg-gray-900 overflow-hidden rounded-tr-md rounded-tl-md">
         <Image src={image} className="w-full h-full" alt={""} />

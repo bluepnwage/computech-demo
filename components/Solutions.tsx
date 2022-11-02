@@ -15,7 +15,7 @@ export function Solutions() {
         <h2 className="font-bold text-3xl mb-5">Solutions</h2>
         <p>See our solutions that can help enhance your organization&apos;s digital transformation</p>
       </header>
-      <div className="grid grid-cols-12 gap-5  w-11/12">
+      <div className="grid grid-cols-6 md:grid-cols-12 gap-5  w-11/12">
         <Card
           image={ai}
           title={"Data & Analytics"}
@@ -51,7 +51,7 @@ interface PropTypes {
 
 function Card({ description, title, image }: PropTypes) {
   return (
-    <div className="col-span-4 group overflow-hidden relative rounded-sm pb-5 flex ring-1 ring-black ring-opacity-5 items-end bg-gray-900 h-64">
+    <div className="col-span-full md:col-span-4 group overflow-hidden relative rounded-sm pb-5 flex ring-1 ring-black ring-opacity-5 items-end bg-gray-900 h-64">
       <div className="bg-white p-5 bg-opacity-70 w-11/12 h-2/4 z-50 rounded-sm">
         <h3 className="font-bold text-xl">{title}</h3>
         <p>{description}</p>

@@ -1,15 +1,34 @@
 import { NavLink } from "./NavLink";
-import styles from "./header.module.css";
 import { TestPopover } from "./NavPopover";
 import { Suspense } from "react";
+import { MobileMenu } from "./MobileMenu";
+import Link from "next/link";
+import logo from "../public/logo.png";
+
 export default function Header() {
   return (
-    <header className="h-12 z-[9999] items-center px-10 border sticky top-0 left-0 bg-white flex justify-between">
-      <p>Computech | Home</p>
-      <nav className="h-full flex items-center">
-        <ul className="flex gap-5 h-full items-center">
+    <header className="h-12 z-[9999] w-full items-center px-5 md:px-10 border sticky top-0 left-0 bg-white flex justify-between">
+      <div className="flex gap-2 items-center">
+        <img src={logo.src} alt={"The official computech logo"} />{" "}
+        <span className="hidden md:inline" aria-hidden>
+          |
+        </span>{" "}
+        <p className="hidden md:block">Home</p>
+      </div>
+      <Suspense>
+        <MobileMenu />
+      </Suspense>
+      <nav className="h-full hidden md:flex items-center">
+        <ul className="flex gap-2  h-full items-center">
+          <li>
+            <Link href={"/demo"} className="text-gray-900">
+              Demo
+            </Link>
+          </li>
           <li className="relative">
-            <TestPopover />
+            <Suspense>
+              <TestPopover />
+            </Suspense>
           </li>
           <li>
             <NavLink>Industries</NavLink>

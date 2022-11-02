@@ -9,11 +9,11 @@ import Image from "next/image";
 export function DigitalSection() {
   return (
     <Section>
-      <header className="mb-7">
+      <header className="mb-7 text-center">
         <h2 className="text-gray-900 text-3xl font-bold mb-5">Drive your digital transformation</h2>
         <p className="text-center">Focus on your areas to unlock value</p>
       </header>
-      <div className="flex justify-between gap-5  w-11/12">
+      <div className="flex justify-between gap-5 flex-col md:flex-row  w-11/12">
         <Card image={engage} title={"Engage your customers"} description={"Give them experiences they love"} />
         <Card
           image={empower}

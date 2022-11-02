@@ -2,24 +2,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-const solutions = [
-  {
-    name: "Insights",
-    description: "Measure actions your users take",
-    href: "##"
-  },
-  {
-    name: "Automations",
-    description: "Create your own targeted content",
-    href: "##"
-  },
-  {
-    name: "Reports",
-    description: "Keep track of your growth",
-    href: "##"
-  }
-];
-
 export function TestPopover() {
   return (
     <>
@@ -31,12 +13,7 @@ export function TestPopover() {
                 ${open ? "" : "text-opacity-90"}
                 group inline-flex items-center rounded-sm outline-none appearance-none  px-3 py-2 text-base  hover:text-indigo-600  hover:text-opacity-100  focus-visible:ring-2 focus-visible:ring-indigo-600  focus-visible:ring-opacity-75`}
             >
-              <span>Solutions</span>
-              {/* <ChevronDownIcon
-                className={`${open ? "" : "text-opacity-70"}
-                  ml-2 h-5 w-5 text-orange-300 transition duration-150 ease-in-out group-hover:text-opacity-80`}
-                aria-hidden="true"
-              /> */}
+              <span>Covid-19 Resources</span>
             </Popover.Button>
             <Transition
               as={Fragment}

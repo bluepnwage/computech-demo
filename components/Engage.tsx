@@ -11,7 +11,7 @@ export function Engage() {
   return (
     <section className=" h-96 flex mb-20 overflow-hidden relative items-center justify-center">
       <header className="my">
-        <h2 className="text-gray-200 font-bold text-4xl text-center">
+        <h2 className="text-gray-200 font-bold text-3xl md:text-4xl text-center">
           Computech is engaged in helping to build better communities.
         </h2>
       </header>
