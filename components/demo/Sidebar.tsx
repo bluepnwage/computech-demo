@@ -9,11 +9,11 @@ export function Sidebar() {
       className="w-1/5 border-r fixed bg-white top-12 left-0 flex flex-col items-center "
     >
       <ul>
-        {demoRoutes.map((link) => {
+        {demoRoutes.map((link, key) => {
           console.log(segment);
           const active = link.href === segment;
           return (
-            <li>
+            <li key={key}>
               <Link className={cx(active ? "text-indigo-600" : "text-gray-900")} href={link.href}>
                 {link.name}
               </Link>
