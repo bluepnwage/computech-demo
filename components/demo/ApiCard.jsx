@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export function ApiCard({ runtime }) {
-  const [data, setData] = useState("This is a quote");
+  const [data, setData] = useState({ content: "", author: "" });
   const [timeToFetch, setTimeToFetch] = useState(0);
   const [loading, setLoading] = useState(false);
 
@@ -16,7 +16,7 @@ export function ApiCard({ runtime }) {
       if (res.ok) {
         const json = await res.json();
         stopInterval();
-        setData(json.message);
+        setData(json);
       }
     } catch (error) {
       console.error(error.message);
@@ -36,21 +36,32 @@ export function ApiCard({ runtime }) {
   };
 
   return (
-    <div className="flex flex-col gap-2 first-of-type:border-r">
+    <div className="flex flex-col gap-2 first-of-type:border-r h-full">
       <header className="py-2">
         <h3 className="font-bold text-center border-b text-xl mb-2">{title}</h3>
       </header>
-      <div className="p-2 space-y-2">
-        <button
-          onClick={handleClick}
-          className="bg-indigo-600 relative block mx-auto text-gray-200 px-4 py-2 active:top-[2px] font-semibold w-fit rounded-md"
-        >
-          Get random quote
-        </button>
-        {loading ? <p>Loading quote...</p> : <p>Quote: {data}</p>}
+      <div className="p-2 flex flex-col gap-2 h-full jusitfy-between">
+        {loading ? (
+          <p>Loading quote...</p>
+        ) : (
+          <>
+            <p className="font-semibold ">
+              Quote: <span className="text-gray-600 font-normal">{data.content}</span>
+            </p>
+            <p className="font-semibold ">
+              Author: <span className="text-gray-600 font-normal">{data.author}</span>
+            </p>
+          </>
+        )}
         <p className="font-semibold">
           Timer: <span className="text-gray-600 font-normal">{timeToFetch}ms</span>{" "}
         </p>
+        <button
+          onClick={handleClick}
+          className="bg-indigo-600 relative block mx-auto mt-auto text-gray-50 px-4 py-2 active:top-[2px] font-semibold w-fit rounded-md"
+        >
+          Get random quote
+        </button>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-// "use client";
+"use client";
 import Link from "next/link";
-// import { useSelectedLayoutSegments } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 export function Sidebar() {
-  // const [segment] = useSelectedLayoutSegments();
+  const [segment] = useSelectedLayoutSegments();
   return (
     <div
       style={{ height: "calc(100vh - 48px)" }}
@@ -10,15 +10,20 @@ export function Sidebar() {
     >
       <p className="text-gray-500 text-xl font-semibold mb-2">Core Features</p>
       <ul className="text-center space-y-2 w-full mb-5">
-        <li>
-          <Link href={"/demo"}>Overview</Link>
-        </li>
-        <li>
-          <Link href={"/demo/api-routes"}>API Routes</Link>
-        </li>
-        <li>
-          <Link href={"/demo/edge-functions"}>Edge functions</Link>
-        </li>
+        {coreFeatures.map((route, key) => {
+          const active = route.href === segment;
+          return (
+            <li key={key}>
+              <Link
+                aria-current={active ? "page" : "false"}
+                className={cx(active ? "font-semibold" : "", "text-gray-500 text-center")}
+                href={`/demo/${route.href}`}
+              >
+                {route.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
       <p className="text-gray-500 text-xl font-semibold mb-2">Data Fetching</p>
       <ul className="space-y-2 w-full text-gray-700 ">
@@ -26,15 +31,13 @@ export function Sidebar() {
           <Link href={"/demo/data-fetching"}>Overview</Link>
         </li>
         {demoRoutes.map((link, key) => {
-          // console.log(segment);
-          {
-            /* const active = link.href === segment; */
-          }
+          console.log(segment);
+          const active = link.href === segment;
           return (
             <li key={key} className=" text-center p-2 w-full">
               <Link
-                // aria-current={active ? "page" : "false"}
-                // className={cx(active ? "text-indigo-600" : "text-gray-900")}
+                aria-current={active ? "page" : "false"}
+                className={cx(active ? "text-indigo-600" : "text-gray-900")}
                 href={`/demo/data-fetching/${link.href}`}
               >
                 {link.name}
@@ -46,6 +49,17 @@ export function Sidebar() {
     </div>
   );
 }
+
+const coreFeatures = [
+  {
+    name: "Overview",
+    href: ""
+  },
+  {
+    name: "API Routes",
+    href: "api-routes"
+  }
+];
 
 const demoRoutes = [
   {
