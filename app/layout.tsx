@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Header from "../components/Header";
-import { Footer } from "../components/Footer";
 
 interface PropTypes {
   children: ReactNode;
@@ -19,7 +18,6 @@ export default function RootLayout({ children }: PropTypes) {
       <body className="bg-gray-50">
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
