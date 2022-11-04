@@ -7,7 +7,7 @@ export default function StreamingLayout({ children }) {
         style={{ minHeight: 200 }}
         className=" w-3/5 p-4 bg-white rounded-md text-gray-900 shadow-md ring-1 ring-black ring-opacity-5"
       >
-        <NestedNav slug={"ssr"} />
+        <NestedNav slug={"streaming"} />
         {children}
       </div>
     </div>
