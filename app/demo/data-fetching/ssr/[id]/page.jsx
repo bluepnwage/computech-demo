@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchAvatar, fetchBlog } from "../../../../util/fetchBlog";
+import { fetchAvatar, fetchBlog } from "../../../../../util/fetchBlog";
 
 export default async function Page({ params }) {
   const blog = await fetchBlog(params);

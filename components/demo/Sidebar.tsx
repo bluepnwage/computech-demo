@@ -1,23 +1,41 @@
-"use client";
+// "use client";
 import Link from "next/link";
-import { useSelectedLayoutSegments } from "next/navigation";
+// import { useSelectedLayoutSegments } from "next/navigation";
 export function Sidebar() {
-  const [segment] = useSelectedLayoutSegments();
+  // const [segment] = useSelectedLayoutSegments();
   return (
     <div
       style={{ height: "calc(100vh - 48px)" }}
       className="w-1/5 border-r fixed bg-white top-12 left-0 flex flex-col items-center pt-5 "
     >
-      <ul className="space-y-4">
+      <p className="text-gray-500 text-xl font-semibold mb-2">Core Features</p>
+      <ul className="text-center space-y-2 w-full mb-5">
+        <li>
+          <Link href={"/demo"}>Overview</Link>
+        </li>
+        <li>
+          <Link href={"/demo/api-routes"}>API Routes</Link>
+        </li>
+        <li>
+          <Link href={"/demo/edge-functions"}>Edge functions</Link>
+        </li>
+      </ul>
+      <p className="text-gray-500 text-xl font-semibold mb-2">Data Fetching</p>
+      <ul className="space-y-2 w-full text-gray-700 ">
+        <li className="text-center font-semibold p-2">
+          <Link href={"/demo/data-fetching"}>Overview</Link>
+        </li>
         {demoRoutes.map((link, key) => {
-          console.log(segment);
-          const active = link.href === segment;
+          // console.log(segment);
+          {
+            /* const active = link.href === segment; */
+          }
           return (
-            <li key={key}>
+            <li key={key} className=" text-center p-2 w-full">
               <Link
-                aria-current={active ? "page" : "false"}
-                className={cx(active ? "text-indigo-600" : "text-gray-900")}
-                href={`/demo/${link.href}`}
+                // aria-current={active ? "page" : "false"}
+                // className={cx(active ? "text-indigo-600" : "text-gray-900")}
+                href={`/demo/data-fetching/${link.href}`}
               >
                 {link.name}
               </Link>

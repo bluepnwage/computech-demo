@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchAvatar, fetchBlog } from "../../../../util/fetchBlog";
+import { fetchAvatar, fetchBlog } from "../../../../../util/fetchBlog";
 
 export async function generateStaticParams() {
   return [{ id: "1" }, { id: "2" }, { id: "3" }];

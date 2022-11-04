@@ -1,5 +1,5 @@
 import React from "react";
-import { NestedNav } from "../../../components/demo/NestedNav";
+import { NestedNav } from "../../../../components/demo/NestedNav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         style={{ minHeight: 200 }}
         className=" w-3/5 p-4 bg-white rounded-md shadow-md ring-1 text-gray-900 ring-black ring-opacity-5"
       >
-        <NestedNav />
+        <NestedNav slug="ssg" />
         {children}
       </div>
     </div>

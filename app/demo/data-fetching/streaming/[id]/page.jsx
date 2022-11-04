@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fetchBlog, fetchAvatar } from "../../../../util/fetchBlog";
+import { fetchBlog, fetchAvatar } from "../../../../../util/fetchBlog";
 import { Suspense } from "react";
 
 export default async function SreamingPage({ params }) {

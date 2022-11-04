@@ -32,7 +32,7 @@
     "app/demo/ssr/layout.jsx",
     "app/demo/streaming/layout.jsx",
     "app/demo/streaming/[id]/page.jsx",
-    "app/demo/ssg/[id]/page.jsx"
+    "app/demo/data-fetching/ssg/[id]/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

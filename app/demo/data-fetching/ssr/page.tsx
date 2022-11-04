@@ -1,4 +1,4 @@
-import { Alert } from "../../../components/demo/Alert";
+import { Alert } from "../../../../components/demo/Alert";
 
 export default function Ssr() {
   return (
