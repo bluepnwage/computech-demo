@@ -1,10 +1,14 @@
 export async function fetchBlog(id: { id: string }) {
-  await delay();
   return blogs.find((blog) => blog.id === id.id);
 }
 
+export async function fetchAvatar() {
+  await delay();
+  return "/bluepnwage.jpg";
+}
+
 async function delay() {
-  await new Promise((resolve) => setTimeout(resolve, 1000 * 5));
+  await new Promise((resolve) => setTimeout(resolve, 1000 * 3));
 }
 
 const blogs = [

@@ -1,3 +1,5 @@
+import { Alert } from "../../../components/demo/Alert";
+
 export default function Ssg() {
   return (
     <>
@@ -9,11 +11,15 @@ export default function Ssg() {
         used for static content which does not change often.
       </p>
       <>Some examples of when to use SSG are:</>
-      <ul className="space-y-2 list-disc ml-4">
+      <ul className="space-y-2 mb-4 list-disc ml-4">
         <li>Blog websites</li>
         <li>Portfolio websites</li>
         <li>Marketing websites</li>
       </ul>
+      <Alert>
+        The dynamic pages here are all predetermined and statically generated. Because of this, users will not
+        experience any delay since the data on the server is only fetched once at build time.
+      </Alert>
     </>
   );
 }

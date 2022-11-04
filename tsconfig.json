@@ -26,7 +26,13 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/demo/page.jsx",
-    "app/demo/streaming/page.jsx"
+    "app/demo/streaming/page.jsx",
+    "components/demo/SsrNav.jsx",
+    "app/demo/ssr/[id]/page.jsx",
+    "app/demo/ssr/layout.jsx",
+    "app/demo/streaming/layout.jsx",
+    "app/demo/streaming/[id]/page.jsx",
+    "app/demo/ssg/[id]/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
