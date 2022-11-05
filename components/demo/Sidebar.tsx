@@ -26,7 +26,7 @@ export function Sidebar() {
         })}
       </ul>
       <p className="text-gray-500 text-xl font-semibold mb-2">Data Fetching</p>
-      <ul className="space-y-2 w-full text-gray-700 ">
+      <ul className="space-y-2 w-full text-gray-500 ">
         <li className="text-center font-semibold p-2">
           <Link href={"/demo/data-fetching"}>Overview</Link>
         </li>
@@ -37,7 +37,7 @@ export function Sidebar() {
             <li key={key} className=" text-center p-2 w-full">
               <Link
                 aria-current={active ? "page" : "false"}
-                className={cx(active ? "text-indigo-600" : "text-gray-900")}
+                className={cx(active ? "text-indigo-600" : "text-gray-500")}
                 href={`/demo/data-fetching/${link.href}`}
               >
                 {link.name}
@@ -58,6 +58,10 @@ const coreFeatures = [
   {
     name: "API Routes",
     href: "api-routes"
+  },
+  {
+    name: "Client-side routing",
+    href: "client-side-routing"
   }
 ];
 

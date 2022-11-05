@@ -22,23 +22,18 @@ export default function Test() {
               </Link>
             </li>
             <li>
+              <Link className="text-indigo-600" href={"/demo/api-routes"}>
+                API Routes
+              </Link>
+            </li>
+            <li>
               <Link className="text-indigo-600" href={"/demo/client-side-routing"}>
                 Client side routing
               </Link>
             </li>
             <li>
-              <Link className="text-indigo-600" href={"/demo/ssr"}>
+              <Link className="text-indigo-600" href={"/demo/image-optimization"}>
                 Automatic Image optimization
-              </Link>
-            </li>
-            <li>
-              <Link className="text-indigo-600" href={"/demo/streaming"}>
-                API Routes
-              </Link>
-            </li>
-            <li>
-              <Link className="text-indigo-600" href={"/demo/streaming"}>
-                Middleware
               </Link>
             </li>
           </ul>
