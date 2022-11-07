@@ -1,4 +1,4 @@
-import { Section } from "../../../components/Section";
+import { Section } from "@components/Section";
 import Link from "next/link";
 
 export default function Overview() {
@@ -23,17 +23,17 @@ export default function Overview() {
           <p>There are 3 examples to show the different ways Next.js can fetch data on the server:</p>
           <ul className="space-y-2 ml-4 list-disc">
             <li>
-              <Link className="text-indigo-600" href={"/demo/ssg"}>
+              <Link className="text-indigo-600" href={"/demo/data-fetching/ssg"}>
                 Static-Site Generation
               </Link>
             </li>
             <li>
-              <Link className="text-indigo-600" href={"/demo/ssr"}>
+              <Link className="text-indigo-600" href={"/demo/data-fetching/ssr"}>
                 Server-side rendering
               </Link>
             </li>
             <li>
-              <Link className="text-indigo-600" href={"/demo/streaming"}>
+              <Link className="text-indigo-600" href={"/demo/data-fetching/streaming"}>
                 HTTP streaming
               </Link>
             </li>
