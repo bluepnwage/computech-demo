@@ -1,4 +1,4 @@
-import { NestedNav } from "../../../../components/demo/NestedNav";
+import { NestedNav } from "@components/demo/NestedNav";
 
 export default function Layout({ children }) {
   return (

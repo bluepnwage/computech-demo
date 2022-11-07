@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { fetchAvatar, fetchBlog } from "../../../../../util/fetchBlog";
+import { fetchBlog } from "../../../../../util/fetchBlog";
+import { Avatar } from "../../../../../components/demo/data-fetching/Avatar";
 
 export default async function Page({ params }) {
   const blog = await fetchBlog(params);
@@ -12,17 +12,5 @@ export default async function Page({ params }) {
       <p className="mb-2">This page was generated on: {date}</p>
       <Avatar />
     </>
-  );
-}
-
-async function Avatar() {
-  const avatar = await fetchAvatar();
-  return (
-    <figure>
-      <Image className="rounded-full" src={avatar} width={50} height={50} alt={""} />
-      <figcaption>
-        <p>Agis Carty</p>
-      </figcaption>
-    </figure>
   );
 }
