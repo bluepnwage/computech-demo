@@ -27,17 +27,13 @@ export function Sidebar() {
       </ul>
       <p className="text-gray-500 text-xl font-semibold mb-2">Data Fetching</p>
       <ul className="space-y-2 w-full text-gray-500 ">
-        <li className="text-center font-semibold p-2">
-          <Link href={"/demo/data-fetching"}>Overview</Link>
-        </li>
         {demoRoutes.map((link, key) => {
-          console.log(segment);
           const active = link.href === segment;
           return (
             <li key={key} className=" text-center p-2 w-full">
               <Link
                 aria-current={active ? "page" : "false"}
-                className={cx(active ? "text-indigo-600" : "text-gray-500")}
+                className={cx(active ? "font-semibold" : "", "text-gray-500  text-center")}
                 href={`/demo/data-fetching/${link.href}`}
               >
                 {link.name}
@@ -62,10 +58,18 @@ const coreFeatures = [
   {
     name: "Client-side routing",
     href: "client-side-routing"
+  },
+  {
+    name: "Performance",
+    href: "performance"
   }
 ];
 
 const demoRoutes = [
+  {
+    name: "Overview",
+    href: ""
+  },
   {
     name: "Static-Site Generation",
     href: "ssg"
