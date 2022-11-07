@@ -1,16 +1,25 @@
 export interface PageSpeedResponse {
   lighthouseResult: {
     audits: Audits;
+    categories: Categories;
   };
 }
 
 type Audits = Record<AuditType, LighthouseAudits>;
-
+type Categories = Record<AuditCategory, CategoryAudit>;
 export interface LighthouseAudits {
   id: string;
   title: string;
   description: string;
   displayValue: string;
+}
+
+type AuditCategory = "performance" | "accessibility" | "seo";
+
+interface CategoryAudit {
+  id: string;
+  title: string;
+  score: number;
 }
 
 export type AuditType =
@@ -22,14 +31,17 @@ export type AuditType =
   | "first-contentful-paint"
   | "cumulative-layout-shift";
 
-const apiKey = process.env.PAGESPEED_INSIGHTS_API_KEY!;
+export type Strategy = "desktop" | "mobile";
+
+const apiKey = process.env.NEXT_PUBLIC_PAGESPEED_INSIGHTS_API_KEY!;
 
 const pagespeedURL = "https://pagespeedonline.googleapis.com/";
 
-export async function getInsights(url: string): Promise<PageSpeedResponse> {
+export async function getInsights(url: string, strategy: Strategy = "desktop"): Promise<PageSpeedResponse> {
   const endpoint = new URL("/pagespeedonline/v5/runPagespeed", pagespeedURL);
   endpoint.searchParams.set("url", url);
   endpoint.searchParams.set("key", apiKey);
+  endpoint.searchParams.set("strategy", strategy);
   const res = await fetch(endpoint, { cache: "no-store" });
   return res.json();
 }
@@ -62,5 +74,15 @@ export function formatAudit(audit: AuditType) {
       return "SI";
     case "total-blocking-time":
       return "TBT";
+  }
+}
+
+export function getAuditScoreColor(score: number) {
+  if (score >= 0.9) {
+    return "good";
+  } else if (score >= 0.5 && score <= 0.89) {
+    return "average";
+  } else {
+    return "poor";
   }
 }

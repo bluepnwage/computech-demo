@@ -1,0 +1,11 @@
+.good {
+  color: rgb(22, 163, 74);
+}
+
+.average {
+  color: rgb(234, 88, 12);
+}
+
+.poor {
+  color: rgb(220, 38, 38);
+}
