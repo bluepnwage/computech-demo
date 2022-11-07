@@ -34,6 +34,7 @@ export function AuditsContainer({ computechAudits, demoAudits }: PropTypes) {
           {audits.map((audit) => {
             return (
               <button
+                key={audit}
                 className={cx(
                   audit === currentAudit ? "bg-indigo-600 text-gray-100" : "bg-white text-gray-900",
                   "font-semibold px-4 py-2 rounded-md border relative first-of-type:border-l-0 last-of-type:border-r-0 active:top-[2px]"
