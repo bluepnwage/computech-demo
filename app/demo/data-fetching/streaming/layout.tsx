@@ -1,6 +1,11 @@
-import { NestedNav } from "../../../../components/demo/NestedNav";
+import { NestedNav } from "@components/demo/NestedNav";
+import type { ReactNode } from "react";
 
-export default function StreamingLayout({ children }) {
+interface PropTypes {
+  children: ReactNode;
+}
+
+export default function StreamingLayout({ children }: PropTypes) {
   return (
     <div className="flex flex-col pt-10 justify-center items-center">
       <div
