@@ -1,5 +1,5 @@
 import React from "react";
-import { NestedNav } from "../../../../components/demo/NestedNav";
+import { NestedNav } from "@components/demo/NestedNav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
