@@ -32,8 +32,8 @@ export default function Test() {
               </Link>
             </li>
             <li>
-              <Link className="text-indigo-600" href={"/demo/image-optimization"}>
-                Automatic Image optimization
+              <Link className="text-indigo-600" href={"/demo/performance"}>
+                Performance optimization
               </Link>
             </li>
           </ul>
@@ -49,7 +49,7 @@ export default function Test() {
               documentation
               <IconExternalLink className="inline-block ml-[2px]" size={14} aria-hidden />
             </a>{" "}
-            for Next.js
+            for Next.js.
           </p>
         </article>
       </Section>

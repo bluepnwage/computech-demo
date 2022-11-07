@@ -6,13 +6,12 @@ import { cx } from "@util/cx";
 interface PropTypes {
   demoScore: number;
   computechScore: number;
-  device: string;
 }
 
-export function ScoreDisplay({ computechScore, demoScore, device }: PropTypes) {
+export function ScoreDisplay({ computechScore, demoScore }: PropTypes) {
   return (
     <>
-      <p className="text-xl font-semibold mb-4">Performance score for {device}</p>
+      <p className="text-xl font-semibold mb-4">Performance Score</p>
       <div className="flex w-3/5 mb-5">
         <AuditScore url="https://computech-demo-bluepnwage.vercel.app/" score={demoScore} />
         <AuditScore url={"http://www.e-computech.com"} score={computechScore} />

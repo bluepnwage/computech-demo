@@ -4,7 +4,7 @@ import { AuditsContainer } from "./AuditsContainer";
 import { useState } from "react";
 import { ScoreDisplay } from "./ScoreDisplay";
 import { SwitchTab } from "./SwitchDevice";
-import { IconDeviceMobile, IconDeviceDesktop } from "@tabler/icons";
+import { IconDeviceMobile, IconDeviceDesktop, IconExternalLink } from "@tabler/icons";
 import useSWR from "swr";
 
 const computechURL = "http://www.e-computech.com";
@@ -33,7 +33,10 @@ const fetcher = async () => {
 
 export function PageSpeedInsights() {
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
-  const { data, error } = useSWR("insights", fetcher, { revalidateIfStale: false, revalidateOnFocus: false });
+  const { data, error } = useSWR("insights", fetcher, {
+    revalidateIfStale: false,
+    revalidateOnFocus: false
+  });
   if (!data) return <p>Loading data</p>;
   if (error) return <p>{error}</p>;
 
@@ -51,7 +54,6 @@ export function PageSpeedInsights() {
         <SwitchTab active={device === "mobile"} Icon={IconDeviceMobile} device={"Mobile"} onSwitch={toggleMobile} />
       </div>
       <ScoreDisplay
-        device={device}
         demoScore={data[device].demo.lighthouseResult.categories.performance.score}
         computechScore={data[device].computech.lighthouseResult.categories.performance.score}
       />
@@ -60,6 +62,7 @@ export function PageSpeedInsights() {
         You can get more in-depth statistics on the official{" "}
         <a target={"_blank"} rel={"noreferrer"} href={"https://pagespeed.web.dev/"} className="text-indigo-600">
           PageSpeed Insights website
+          <IconExternalLink className="inline ml-[2px]" size={12} aria-hidden />
         </a>
         .
       </p>

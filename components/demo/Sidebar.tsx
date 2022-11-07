@@ -1,6 +1,8 @@
 "use client";
+import { cx } from "@util/cx";
 import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";
+
 export function Sidebar() {
   const [segment] = useSelectedLayoutSegments();
   return (
@@ -11,7 +13,7 @@ export function Sidebar() {
       <p className="text-gray-500 text-xl font-semibold mb-2">Core Features</p>
       <ul className="text-center space-y-2 w-full mb-5">
         {coreFeatures.map((route, key) => {
-          const active = route.href === segment;
+          const active = route.href === segment || (segment === null && key === 0);
           return (
             <li key={key}>
               <Link
@@ -28,9 +30,10 @@ export function Sidebar() {
       <p className="text-gray-500 text-xl font-semibold mb-2">Data Fetching</p>
       <ul className="space-y-2 w-full text-gray-500 ">
         {demoRoutes.map((link, key) => {
-          const active = link.href === segment;
+          console.log(link.href, segment);
+          const active = link.href === segment || (segment === null && key === 0);
           return (
-            <li key={key} className=" text-center p-2 w-full">
+            <li key={key}>
               <Link
                 aria-current={active ? "page" : "false"}
                 className={cx(active ? "font-semibold" : "", "text-gray-500  text-center")}
@@ -83,7 +86,3 @@ const demoRoutes = [
     href: "streaming"
   }
 ];
-
-function cx(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}

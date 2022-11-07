@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { IconExternalLink } from "@tabler/icons";
 import { Section } from "@components/Section";
 import { PageSpeedInsights } from "@components/demo/performance/Insights";
@@ -10,7 +9,7 @@ export default function Performance() {
         <h2 className="font-bold text-3xl text-center mb-2 mt-5">Performance</h2>
         <article className="w-3/5">
           <p>
-            In a{" "}
+            According to a{" "}
             <a
               className="text-indigo-600"
               target={"_blank"}
@@ -22,22 +21,21 @@ export default function Performance() {
               study by Google
               <IconExternalLink size={12} className="inline-block ml-[2px]" aria-hidden />
             </a>{" "}
-            in 2018, abandomnent rates for your website will increase by <strong>32%</strong> if it takes longer than 3
-            seconds to load. Having a highly optimized website is important for user retention. One of the biggest
-            factors to look out for is the handling of images and scripts. For images, you should always make sure to
-            serve them in next-gen formats, such as <i>.webP</i>, and lazy load off-screen images. This alone can
-            significantly increase the speed of your websites. Concerning scripts, you should always try to send the
-            least amount of JavaScript possible, and only download the code you absolutely need at first, then lazy load
-            the rest. Next.js can help with both of these issues by automatically lazy loading your images and serving
-            them in <i>.webP</i>, and code splitting your app thus, decreasing the size of your main bundle.
+            in 2018, abandonmnent rates for a website will increase by <strong>32%</strong> if it takes 1-3 seconds to
+            load, <strong>90%</strong> if it takes 1-5 seconds to load, and over <strong>100%</strong> if it takes
+            longer 6 seconds. Based on these numbers, we can conclude that having a highly optimized website is crucial
+            for user retention. One of the leading factors to look out for is the handling of images and scripts. Images
+            must be served in next-gen formats, such as WebP, and lazy loaded if they are off-screen on initial page
+            load. This alone can <em>significantly</em> increase the speed of a website. In terms of dealing with
+            scripts, always consider sending the least amount of JavaScript possible, then lazy loading the rest.
+            Next.js can help with both of these issues by automatically lazy loading images, serving them in WebP, and
+            code splitting your app thus, decreasing the size of your main bundle.
           </p>
         </article>
       </Section>
       <Section>
-        <h2 className="text-gray-900 font-bold text-3xl text-center mb-4">See it in action</h2>
-        <Suspense fallback={<p>Loading data for demo</p>}>
-          <PageSpeedInsights />
-        </Suspense>
+        <h2 className="text-gray-900 font-bold text-3xl text-center mb-5">See it in action</h2>
+        <PageSpeedInsights />
       </Section>
     </>
   );

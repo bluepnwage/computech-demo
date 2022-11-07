@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { cx } from "@util/cx";
 import { PageSpeedResponse, AuditType, LighthouseAudits, formatAudit } from "@util/page-speed";
+import { IconExternalLink } from "@tabler/icons";
 
 interface PropTypes {
   computechAudits: PageSpeedResponse;
@@ -62,7 +63,7 @@ export function AuditsContainer({ computechAudits, demoAudits }: PropTypes) {
               href={"https://developers.google.com/speed/docs/insights/v5/get-started"}
               className="text-indigo-600 "
             >
-              PageSpeed Insights API
+              PageSpeed Insights API <IconExternalLink className="inline ml-[2px]" aria-hidden size={12} />
             </a>
           </p>
         </div>
