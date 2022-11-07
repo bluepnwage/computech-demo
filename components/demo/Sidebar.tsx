@@ -33,7 +33,7 @@ export function Sidebar() {
           console.log(link.href, segment);
           const active = link.href === segment || (segment === null && key === 0);
           return (
-            <li key={key}>
+            <li key={key} className="text-center">
               <Link
                 aria-current={active ? "page" : "false"}
                 className={cx(active ? "font-semibold" : "", "text-gray-500  text-center")}
