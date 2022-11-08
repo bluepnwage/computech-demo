@@ -47,9 +47,9 @@ export function AuditsContainer({ computechAudits, demoAudits }: PropTypes) {
             );
           })}
         </div>
-        <div className="col-span-full text-semibold py-2 border-b text-center">
-          <p className="text-xl mb-2">{auditTitle}</p>
-          <p className="">{auditDescription.split("[Learn more]")[0]}</p>
+        <div className="col-span-full py-2 border-b text-center">
+          <p className="text-xl mb-2 font-semibold">{auditTitle}</p>
+          <p className="text-md">{auditDescription.split("[Learn more]")[0]}</p>
         </div>
 
         <Audit border demo audit={demoAudits.lighthouseResult.audits[currentAudit]} />
@@ -81,7 +81,7 @@ interface AuditPropTypes {
 function Audit({ audit, demo, border }: AuditPropTypes) {
   return (
     <>
-      <div className={cx("flex flex-col text-center p-2", border ? "border-r" : "")}>
+      <div className={cx("flex flex-col text-center p-4", border ? "border-r" : "")}>
         <p className="text-gray-600 text-xl">{demo ? "Demo" : "Computech"} website</p>
         <p className="text-2xl font-semibold">{audit.displayValue}</p>
       </div>
