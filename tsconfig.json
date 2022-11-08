@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/demo/page.jsx",
+    "app/demo/page.tsx",
     "app/demo/streaming/page.jsx",
     "components/demo/SsrNav.jsx",
     "app/demo/ssr/[id]/page.jsx",

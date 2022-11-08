@@ -1,6 +1,7 @@
-import { Section } from "../../components/Section";
+import { Section } from "@components/Section";
 import Link from "next/link";
 import { IconExternalLink } from "@tabler/icons";
+
 export default function Test() {
   return (
     <>
