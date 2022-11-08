@@ -5,10 +5,8 @@ import { useState } from "react";
 import { ScoreDisplay } from "./ScoreDisplay";
 import { SwitchTab } from "./SwitchDevice";
 import { IconDeviceMobile, IconDeviceDesktop, IconExternalLink } from "@tabler/icons";
+import { computechURL, demoURL } from "@lib/websites";
 import useSWR from "swr";
-
-const computechURL = "http://www.e-computech.com";
-const demoURL = "https://computech-demo-bluepnwage.vercel.app";
 
 export const fetcher = async () => {
   const [computechDesktop, computechMobile, demoDesktop, demoMobile] = await Promise.all([
@@ -39,7 +37,6 @@ interface PropTypes {
 export function PageSpeedInsights({ fallbackData }: PropTypes) {
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
   const { data, error, isValidating } = useSWR("insights", fetcher, {
-    revalidateIfStale: false,
     revalidateOnFocus: false,
     fallbackData
   });
@@ -66,7 +63,7 @@ export function PageSpeedInsights({ fallbackData }: PropTypes) {
       <AuditsContainer computechAudits={data[device].computech} demoAudits={data[device].demo} />
       {isValidating && <p className="animate-pulse mb-2">Revalidating data...</p>}
       <p className="mb-2 font-semibold">
-        Last updated: <time className="font-normal">{data.timestamp.toLocaleString()}</time>
+        Last updated: <time className="font-normal">{data.timestamp.toLocaleDateString()}</time>
       </p>
       <p>
         You can get more in-depth statistics on the official{" "}

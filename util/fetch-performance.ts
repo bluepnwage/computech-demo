@@ -1,7 +1,5 @@
+import { computechURL, demoURL } from "@lib/websites";
 import { getInsights } from "./page-speed";
-
-const computechURL = "http://www.e-computech.com";
-const demoURL = "https://computech-demo-bluepnwage.vercel.app";
 
 type InsightsResponse = Awaited<ReturnType<typeof getInsights>>;
 interface PerformanceData {

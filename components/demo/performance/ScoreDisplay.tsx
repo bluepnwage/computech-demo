@@ -2,6 +2,7 @@
 import { getAuditScoreColor } from "@util/page-speed";
 import styles from "./audit.module.css";
 import { cx } from "@util/cx";
+import { computechURL, demoURL } from "@lib/websites";
 
 interface PropTypes {
   demoScore: number;
@@ -13,8 +14,8 @@ export function ScoreDisplay({ computechScore, demoScore }: PropTypes) {
     <>
       <p className="text-xl font-semibold mb-4">Performance Score</p>
       <div className="flex w-3/5 mb-5">
-        <AuditScore url="https://computech-demo-bluepnwage.vercel.app/" score={demoScore} />
-        <AuditScore url={"http://www.e-computech.com"} score={computechScore} />
+        <AuditScore url={demoURL} score={demoScore} />
+        <AuditScore url={computechURL} score={computechScore} />
       </div>
     </>
   );
@@ -27,7 +28,6 @@ interface AuditScorePropTypes {
 
 export function AuditScore({ score, url }: AuditScorePropTypes) {
   const scoreColor = getAuditScoreColor(score);
-  console.log(score, scoreColor);
   return (
     <div className="py-2 basis-2/4 grow text-center">
       <p className={cx(`${styles[scoreColor]}`, "text-2xl font-semibold text-center")}>
