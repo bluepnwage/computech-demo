@@ -3,7 +3,20 @@ import { getInsights } from "./page-speed";
 const computechURL = "http://www.e-computech.com";
 const demoURL = "https://computech-demo-bluepnwage.vercel.app";
 
-export async function fetchPerformance(retryCount: number): Promise<any> {
+type InsightsResponse = Awaited<ReturnType<typeof getInsights>>;
+interface PerformanceData {
+  mobile: {
+    demo: InsightsResponse;
+    computech: InsightsResponse;
+  };
+  desktop: {
+    demo: InsightsResponse;
+    computech: InsightsResponse;
+  };
+  timestamp: Date;
+}
+
+export async function fetchPerformance(retryCount: number): Promise<PerformanceData> {
   if (retryCount > 5) throw new Error("Failed to fetch stats. Retry count exceeded");
   const [computechDesktop, computechMobile, demoDesktop, demoMobile] = await Promise.all([
     getInsights(computechURL, "desktop"),
