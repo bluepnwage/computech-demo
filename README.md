@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Computech Demo website
+
+This is demo website, is a rebuild of the landing page for the official [Computech](http://www.e-computech.com) website. The idea behind this project, is to help illustrate the performance benefits of using [Next.js](https://nextjs.org) when building a website.
+
+## Technologies used
+
+- [TailwindCSS](https://tailwindcss.com/)
+- [Next.js](https://nextjs.org/)
+- [Framer motion](https://www.framer.com/motion/)
+- [Headless UI](https://headlessui.com/)
 
 ## Getting Started
 
