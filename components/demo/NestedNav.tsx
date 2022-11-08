@@ -13,13 +13,13 @@ interface PropTypes {
 export function NestedNav({ slug }: PropTypes) {
   const [segments] = useSelectedLayoutSegments();
   return (
-    <div className="border-b px-2 pt-2 flex justify-center -mx-4 -mt-4 mb-4">
+    <div className="border-b px-2  flex justify-center -mx-4 -mt-4 mb-4">
       <ul className="flex gap-5 mx-auto">
         <li>
           <Link
             className={cx(
               !segments ? "text-indigo-600 border-indigo-600" : "text-gray-900 border-white",
-              "border-b-2 font-semibold"
+              "border-b-2 font-semibold py-2 inline-block"
             )}
             href={`/demo/data-fetching/${slug}`}
           >
@@ -32,8 +32,8 @@ export function NestedNav({ slug }: PropTypes) {
             <li key={key}>
               <Link
                 className={cx(
-                  active ? "text-indigo-600 border-indigo-600 " : "text-gray-900 border-white font-semibold",
-                  "border-b-2"
+                  active ? "text-indigo-600 border-indigo-600 " : "text-gray-900 border-white ",
+                  "border-b-2 font-semibold py-2 inline-block"
                 )}
                 href={`/demo/data-fetching/${slug}/${blog.id}`}
               >{`Blog #${blog.id}`}</Link>
