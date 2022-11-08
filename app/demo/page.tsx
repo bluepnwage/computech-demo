@@ -39,7 +39,7 @@ export default function Test() {
             </li>
           </ul>
           <p>
-            You can find out more through the official{" "}
+            Additional information can find be found through the official{" "}
             <a
               className="text-indigo-600"
               title={"Official Next.js documentation"}
