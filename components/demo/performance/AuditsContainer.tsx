@@ -47,7 +47,7 @@ export function AuditsContainer({ computechAudits, demoAudits }: PropTypes) {
             );
           })}
         </div>
-        <div className="col-span-full py-2 border-b text-center">
+        <div style={{ minHeight: 120 }} className="col-span-full py-2 border-b text-center">
           <p className="text-xl mb-2 font-semibold">{auditTitle}</p>
           <p className="text-md">{auditDescription.split("[Learn more]")[0]}</p>
         </div>
