@@ -42,7 +42,7 @@ export async function getInsights(url: string, strategy: Strategy = "desktop"): 
   endpoint.searchParams.set("url", url);
   endpoint.searchParams.set("key", apiKey);
   endpoint.searchParams.set("strategy", strategy);
-  const res = await fetch(endpoint, { cache: "no-store" });
+  const res = await fetch(endpoint);
   return res.json();
 }
 

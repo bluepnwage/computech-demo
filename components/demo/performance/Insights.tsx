@@ -10,7 +10,7 @@ import useSWR from "swr";
 const computechURL = "http://www.e-computech.com";
 const demoURL = "https://computech-demo-bluepnwage.vercel.app";
 
-const fetcher = async () => {
+export const fetcher = async () => {
   const [computechDesktop, computechMobile, demoDesktop, demoMobile] = await Promise.all([
     getInsights(computechURL, "desktop"),
     getInsights(computechURL, "mobile"),
@@ -27,15 +27,21 @@ const fetcher = async () => {
     desktop: {
       demo: demoDesktop,
       computech: computechDesktop
-    }
+    },
+    timestamp: new Date()
   };
 };
 
-export function PageSpeedInsights() {
+interface PropTypes {
+  fallbackData: Awaited<ReturnType<typeof fetcher>>;
+}
+
+export function PageSpeedInsights({ fallbackData }: PropTypes) {
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
-  const { data, error } = useSWR("insights", fetcher, {
+  const { data, error, isValidating } = useSWR("insights", fetcher, {
     revalidateIfStale: false,
-    revalidateOnFocus: false
+    revalidateOnFocus: false,
+    fallbackData
   });
   if (!data) return <p>Loading data</p>;
   if (error) return <p>{error}</p>;
@@ -58,6 +64,10 @@ export function PageSpeedInsights() {
         computechScore={data[device].computech.lighthouseResult.categories.performance.score}
       />
       <AuditsContainer computechAudits={data[device].computech} demoAudits={data[device].demo} />
+      {isValidating && <p className="animate-pulse mb-2">Revalidating data...</p>}
+      <p className="mb-2 font-semibold">
+        Last updated: <time className="font-normal">{data.timestamp.toLocaleString()}</time>
+      </p>
       <p>
         You can get more in-depth statistics on the official{" "}
         <a target={"_blank"} rel={"noreferrer"} href={"https://pagespeed.web.dev/"} className="text-indigo-600">
