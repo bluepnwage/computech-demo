@@ -49,20 +49,6 @@ async function getInsights(url: string, strategy: Strategy = "desktop"): Promise
   return res.json();
 }
 
-const auditKeys: AuditType[] = [
-  "cumulative-layout-shift",
-  "first-contentful-paint",
-  "first-meaningful-paint",
-  "interactive",
-  "largest-contentful-paint",
-  "speed-index",
-  "total-blocking-time"
-];
-
-export function filterAudits([key]: any[]) {
-  return auditKeys.includes(key);
-}
-
 export function formatAudit(audit: AuditType) {
   switch (audit) {
     case "cumulative-layout-shift":
