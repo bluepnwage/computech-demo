@@ -23,13 +23,13 @@ export default function Performance() {
             </a>{" "}
             in 2018, abandonmnent rates for a website will increase by <strong>32%</strong> if it takes 1-3 seconds to
             load, <strong>90%</strong> if it takes 1-5 seconds to load, and over <strong>100%</strong> if it takes
-            longer than 6 seconds. Based on these numbers, we can conclude that having a highly optimized website is
-            crucial for user retention. One of the leading factors to look out for is the handling of images and
-            scripts. Images must be served in next-gen formats, such as WebP, and lazy loaded if they are off-screen on
-            initial page load. This alone can <em>significantly</em> increase the speed of a website. In terms of
-            dealing with scripts, always consider sending the least amount of JavaScript possible, then lazy loading the
-            rest. Next.js can help with both of these issues by automatically lazy loading images, serving them in WebP,
-            and code splitting your app thus, decreasing the size of your main bundle.
+            longer than 6 seconds. Based on these numbers, having a performant website can be the deciding factor in
+            keeping your users&apos;. Some of the leading causes to slow websites are images and scripts. Images must be
+            served in next-gen formats, such as WebP, and lazy loaded if they are off-screen on initial page load. This
+            alone can <em>significantly</em> increase the speed of a website. In terms of dealing with scripts, always
+            consider sending the least amount of JavaScript possible, then lazy loading the rest. Next.js can help with
+            both of these issues by automatically lazy loading images, serving them in WebP, and code splitting an
+            application thus, decreasing the size of a websites main bundle.
           </p>
         </article>
       </Section>

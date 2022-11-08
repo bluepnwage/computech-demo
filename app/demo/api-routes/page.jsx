@@ -23,7 +23,7 @@ export default function ApiRoutes() {
             region at a time, which might cause your users to experience higher latency based on their location in the
             world. Your serverless functions may also suffer from cold starts, if they aren&apos;t invoked on a regular
             basis. However, you can opt-in to using the <strong>Edge runtime</strong> to get around some of the
-            downsides to serverless functtions. Edge functions will execute code as close as possible to your end-users,
+            downsides to serverless functions. Edge functions will execute code as close as possible to your end-users,
             without suffering from cold starts and increased latency.
           </p>
         </div>
