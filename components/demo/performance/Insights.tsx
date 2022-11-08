@@ -30,14 +30,18 @@ export const fetcher = async () => {
   };
 };
 
-export function PageSpeedInsights() {
+interface PropTypes {
+  fallbackData: Awaited<ReturnType<typeof fetcher>>;
+}
+
+export function PageSpeedInsights({ fallbackData }: PropTypes) {
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
   const { data, error, isValidating } = useSWR("insights", fetcher, {
     revalidateOnFocus: false,
-    errorRetryCount: 3
+    fallbackData
   });
   if (!data) return <p>Loading data</p>;
-  if (error && !data) return <p>{error}</p>;
+  if (error) return <p>{error}</p>;
 
   const toggleDesktop = () => {
     setDevice("desktop");
