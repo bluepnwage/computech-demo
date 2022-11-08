@@ -1,7 +1,7 @@
 import { IconExternalLink } from "@tabler/icons";
 import { Section } from "@components/Section";
 import { PageSpeedInsights } from "@components/demo/performance/Insights";
-import { fetchPerformance } from "@util/fetch-performance";
+import { fetchPerformance } from "@util/page-speed";
 
 export default async function Performance() {
   const insights = await fetchPerformance(0);
@@ -37,7 +37,7 @@ export default async function Performance() {
       </Section>
       <Section>
         <h2 className="text-gray-900 font-bold text-3xl text-center mb-5">See it in action</h2>
-        <PageSpeedInsights fallbackData={insights} />
+        <PageSpeedInsights data={insights} />
       </Section>
     </>
   );
