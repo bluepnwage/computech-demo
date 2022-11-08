@@ -33,10 +33,11 @@ export const fetcher = async () => {
 export function PageSpeedInsights() {
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
   const { data, error, isValidating } = useSWR("insights", fetcher, {
-    revalidateOnFocus: false
+    revalidateOnFocus: false,
+    errorRetryCount: 3
   });
   if (!data) return <p>Loading data</p>;
-  if (error) return <p>{error}</p>;
+  if (error && !data) return <p>{error}</p>;
 
   const toggleDesktop = () => {
     setDevice("desktop");
