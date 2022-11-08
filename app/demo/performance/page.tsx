@@ -2,34 +2,35 @@ import { IconExternalLink } from "@tabler/icons";
 import { Section } from "@components/Section";
 import { PageSpeedInsights } from "@components/demo/performance/Insights";
 import { getInsights } from "@util/page-speed";
+import { fetchPerformance } from "@util/fetch-performance";
 
 const computechURL = "http://www.e-computech.com";
 const demoURL = "https://computech-demo-bluepnwage.vercel.app";
 
-async function fetchInsights() {
-  const [computechDesktop, computechMobile, demoDesktop, demoMobile] = await Promise.all([
-    getInsights(computechURL, "desktop"),
-    getInsights(computechURL, "mobile"),
-    getInsights(demoURL, "desktop"),
-    getInsights(demoURL, "mobile")
-  ]);
-  if ("error" in computechDesktop || "error" in computechMobile) throw new Error("Failed to fetch computech stats");
-  if ("error" in demoDesktop || "error" in demoMobile) throw new Error("Failed to fetch demo stats");
-  return {
-    mobile: {
-      demo: demoMobile,
-      computech: computechMobile
-    },
-    desktop: {
-      demo: demoDesktop,
-      computech: computechDesktop
-    },
-    timestamp: new Date()
-  };
-}
+// async function fetchInsights() {
+//   const [computechDesktop, computechMobile, demoDesktop, demoMobile] = await Promise.all([
+//     getInsights(computechURL, "desktop"),
+//     getInsights(computechURL, "mobile"),
+//     getInsights(demoURL, "desktop"),
+//     getInsights(demoURL, "mobile")
+//   ]);
+//   if ("error" in computechDesktop || "error" in computechMobile) throw new Error("Failed to fetch computech stats");
+//   if ("error" in demoDesktop || "error" in demoMobile) throw new Error("Failed to fetch demo stats");
+//   return {
+//     mobile: {
+//       demo: demoMobile,
+//       computech: computechMobile
+//     },
+//     desktop: {
+//       demo: demoDesktop,
+//       computech: computechDesktop
+//     },
+//     timestamp: new Date()
+//   };
+// }
 
 export default async function Performance() {
-  const insights = await fetchInsights();
+  const insights = await fetchPerformance(0);
   return (
     <>
       <Section>
