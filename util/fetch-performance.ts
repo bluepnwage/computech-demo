@@ -11,7 +11,7 @@ interface PerformanceData {
     demo: InsightsResponse;
     computech: InsightsResponse;
   };
-  timestamp: Date;
+  timestamp: string;
 }
 
 export async function fetchPerformance(retryCount: number): Promise<PerformanceData> {
@@ -33,6 +33,6 @@ export async function fetchPerformance(retryCount: number): Promise<PerformanceD
       demo: demoDesktop,
       computech: computechDesktop
     },
-    timestamp: new Date()
+    timestamp: new Date().toString()
   };
 }

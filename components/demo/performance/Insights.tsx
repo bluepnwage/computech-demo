@@ -26,7 +26,7 @@ export const fetcher = async () => {
       demo: demoDesktop,
       computech: computechDesktop
     },
-    timestamp: new Date()
+    timestamp: new Date().toString()
   };
 };
 
@@ -63,7 +63,7 @@ export function PageSpeedInsights({ fallbackData }: PropTypes) {
       <AuditsContainer computechAudits={data[device].computech} demoAudits={data[device].demo} />
       {isValidating && <p className="animate-pulse mb-2">Revalidating data...</p>}
       <p className="mb-2 font-semibold">
-        Last updated: <time className="font-normal">{data.timestamp.toLocaleDateString()}</time>
+        Last updated: <time className="font-normal">{data.timestamp}</time>
       </p>
       <p>
         You can get more in-depth statistics on the official{" "}
