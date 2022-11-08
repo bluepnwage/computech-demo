@@ -30,15 +30,10 @@ export const fetcher = async () => {
   };
 };
 
-interface PropTypes {
-  fallbackData: Awaited<ReturnType<typeof fetcher>>;
-}
-
-export function PageSpeedInsights({ fallbackData }: PropTypes) {
+export function PageSpeedInsights() {
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
   const { data, error, isValidating } = useSWR("insights", fetcher, {
-    revalidateOnFocus: false,
-    fallbackData
+    revalidateOnFocus: false
   });
   if (!data) return <p>Loading data</p>;
   if (error) return <p>{error}</p>;
