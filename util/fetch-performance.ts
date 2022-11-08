@@ -15,7 +15,7 @@ interface PerformanceData {
 }
 
 export async function fetchPerformance(retryCount: number): Promise<PerformanceData> {
-  if (retryCount > 3) throw new Error("Failed to fetch stats. Retry count exceeded");
+  if (retryCount > 4) throw new Error("Failed to fetch stats. Retry count exceeded");
   const [computechDesktop, computechMobile, demoDesktop, demoMobile] = await Promise.all([
     getInsights(computechURL, "desktop"),
     getInsights(computechURL, "mobile"),
