@@ -6,6 +6,7 @@ import fortinet from "../public/fortinet.png";
 import veeam from "../public/veeam.png";
 import mitel from "../public/mitel.png";
 import Image from "next/image";
+import { IconBrandFacebook, IconBrandTwitter, IconBrandLinkedin } from "@tabler/icons";
 
 export function Footer() {
   return (
@@ -33,9 +34,33 @@ export function Footer() {
         <div className="basis-1/3 grow">
           <h2 className="text-gray-100 font-bold text-xl mb-2">Follow us</h2>
           <div className="flex gap-10 text-gray-300">
-            <p>Twitter</p>
-            <p>Facebook</p>
-            <p>LinkedIn</p>
+            <a
+              aria-label="View Twitter profile"
+              href={"#"}
+              target={"_blank"}
+              rel={"noreferrer"}
+              className="text-gray-400  hover:text-indigo-500 hover:scale-125 duration-200 ease-out"
+            >
+              <IconBrandTwitter size={30} />
+            </a>
+            <a
+              aria-label="View Facebook profile"
+              href={"#"}
+              target={"_blank"}
+              rel={"noreferrer"}
+              className="text-gray-400  hover:text-indigo-500 hover:scale-125 duration-200 ease-out"
+            >
+              <IconBrandFacebook size={30} />
+            </a>
+            <a
+              aria-label="View Linkedin profile"
+              href={"#"}
+              target={"_blank"}
+              rel={"noreferrer"}
+              className="text-gray-400  hover:text-indigo-500 hover:scale-125 duration-200 ease-out"
+            >
+              <IconBrandLinkedin size={30} />
+            </a>
           </div>
         </div>
       </div>
