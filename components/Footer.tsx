@@ -65,7 +65,7 @@ export function Footer() {
         </div>
       </div>
       <Banner />
-      <small className="text-gray-100">© 2022 Computech — All Rights Reserved.</small>
+      <small className="text-gray-100">© {new Date().getFullYear()} Computech — All Rights Reserved.</small>
     </footer>
   );
 }

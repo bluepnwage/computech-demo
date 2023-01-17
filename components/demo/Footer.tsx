@@ -16,7 +16,12 @@ export function Footer() {
       </p>
       <p>
         View the source code{" "}
-        <a rel={"noreferrer"} href={"#"} target={"_blank"} className="text-indigo-600">
+        <a
+          rel={"noreferrer"}
+          href={"https://github.com/bluepnwage/computech-demo"}
+          target={"_blank"}
+          className="text-indigo-600"
+        >
           Here
         </a>
       </p>
